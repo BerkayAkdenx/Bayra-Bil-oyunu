@@ -1,3 +1,4 @@
+import 'package:bayrak_bilmece_app/QuizEkrani.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -14,20 +15,17 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home:  Anasayfa(),
+      home: Anasayfa(),
     );
   }
 }
 
 class Anasayfa extends StatefulWidget {
-
-
   @override
   State<Anasayfa> createState() => _AnasayfaState();
 }
 
 class _AnasayfaState extends State<Anasayfa> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,11 +36,26 @@ class _AnasayfaState extends State<Anasayfa> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
-
+            Text(
+              "QUİZE HOŞGELDİNİZ",
+              style: TextStyle(fontSize: 30),
+            ),
+            SizedBox(
+              width: 250,
+              height: 50,
+              child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => QuizEkrani(),
+                        ));
+                  },
+                  child: Text("Başla")),
+            ),
           ],
         ),
       ),
-
     );
   }
 }

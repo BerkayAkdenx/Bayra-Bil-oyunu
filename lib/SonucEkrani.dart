@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 class SonucEkrani extends StatefulWidget {
-  const SonucEkrani({Key? key}) : super(key: key);
+  late int dogruSayisi;
+
+  SonucEkrani({required this.dogruSayisi});
 
   @override
   State<SonucEkrani> createState() => _SonucEkraniState();
@@ -18,11 +20,32 @@ class _SonucEkraniState extends State<SonucEkrani> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
-
+            Column(
+              children: [
+                Text("Doğru : ${widget.dogruSayisi}",
+                    style: TextStyle(fontSize: 30)),
+                Padding(
+                  padding: EdgeInsets.all(10.0),
+                  child: Text("Yanlış :  ${15 - widget.dogruSayisi}",
+                      style: TextStyle(fontSize: 30)),
+                ),
+              ],
+            ),
+            Text("Başarı Oranı : ${widget.dogruSayisi*100~/15}",
+                style: TextStyle(fontSize: 30,color: Colors.pink)),
+            SizedBox(
+              width: 250,
+              height: 50,
+              child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                  child: Text("TEKRAR DENE")),
+            ),
           ],
         ),
       ),
-
-    );;
+    );
+    ;
   }
 }
