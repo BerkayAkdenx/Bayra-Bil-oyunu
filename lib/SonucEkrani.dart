@@ -26,13 +26,13 @@ class _SonucEkraniState extends State<SonucEkrani> {
                     style: TextStyle(fontSize: 30)),
                 Padding(
                   padding: EdgeInsets.all(10.0),
-                  child: Text("Yanlış :  ${15 - widget.dogruSayisi}",
+                  child: Text("Yanlış :  ${5 - widget.dogruSayisi}",
                       style: TextStyle(fontSize: 30)),
                 ),
               ],
             ),
-            Text("Başarı Oranı : ${widget.dogruSayisi*100~/15}",
-                style: TextStyle(fontSize: 30,color: Colors.pink)),
+            Text("Başarı Oranı : ${widget.dogruSayisi * 100 ~/ 5}",
+                style: TextStyle(fontSize: 30, color: Colors.pink)),
             SizedBox(
               width: 250,
               height: 50,
